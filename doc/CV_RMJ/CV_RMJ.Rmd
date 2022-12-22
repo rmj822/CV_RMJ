@@ -1,0 +1,63 @@
+---
+name: Roger
+surname: Moreno-Justicia
+Date of birth: "28 January 1997"
+position: "PhD student in Functional Proteomics in Metabolism"
+affiliation: "Novo Nordisk Foundation Center for Basic Metabolic Research"
+profilepic: Roger_Moreno_Justicia_HIGH.jpg
+email: "roger.moreno.justicia@sund.ku.dk"
+twitter: Roger_MorenoJ
+github: rmj822
+date: "`r format(Sys.time(), '%B %Y')`"
+aboutme: "I am a young and passionate researcher within the areas of skeletal muscle physiology and proteomics. My particular research interest is the translational application of proteomics data into metabolic diseases and exercise physiology."
+output: vitae::twentyseconds
+# theme: vapor
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+```
+
+# Some stuff about me
+
+ * Originally from Spain, now based in Copenhagen, Denmark
+ * I'm rediscovering myself as a data scientist who enjoys coding and working with omics data
+ * I consider myself a very engaging person, eager to collaborate and share new ideas
+ * 
+ * Amazing volleyball hitter and great guitar player
+
+# Education
+
+```{r}
+library(tibble)
+tribble(
+  ~ Degree, ~ Year, ~ Institution, ~ Where,
+  "Informal studies", "1889-91", "Flying University", "Warsaw, Poland",
+  "Master of Physics", "1893", "Sorbonne Université", "Paris, France",
+  "Master of Mathematics", "1894", "Sorbonne Université", "Paris, France"
+) %>% 
+  detailed_entries(Degree, Year, Institution, Where)
+```
+
+# Nobel Prizes
+
+```{r}
+tribble(
+  ~Year, ~Type, ~Desc,
+  1903, "Physics", "Awarded for her work on radioactivity with Pierre Curie and Henri Becquerel",
+  1911, "Chemistry", "Awarded for the discovery of radium and polonium"
+) %>% 
+  brief_entries(
+    glue::glue("Nobel Prize in {Type}"),
+    Year, 
+    Desc
+  )
+```
+
+# Publications
+
+```{r}
+
+```
+

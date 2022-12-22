@@ -1,0 +1,9 @@
+Package: CV_RMJ
+Type: Project
+Version: 0.0.1
+Imports:
+    knitr,
+    rmarkdown,
+    tinytex,
+    vitae
+Encoding: UTF-8
