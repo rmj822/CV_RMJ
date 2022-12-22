@@ -11,7 +11,6 @@ github: rmj822
 date: "`r format(Sys.time(), '%B %Y')`"
 aboutme: "I am a young and passionate researcher within the areas of skeletal muscle physiology and proteomics. My particular research interest is the translational application of proteomics data into metabolic diseases and exercise physiology."
 output: vitae::twentyseconds
-# theme: vapor
 ---
 
 ```{r setup, include=FALSE}
@@ -24,7 +23,7 @@ library(vitae)
  * Originally from Spain, now based in Copenhagen, Denmark
  * I'm rediscovering myself as a data scientist who enjoys coding and working with omics data
  * I consider myself a very engaging person, eager to collaborate and share new ideas
- * 
+ * Participating in networking events from Danish Diabetes Academy to build a strong research network
  * Amazing volleyball hitter and great guitar player
 
 # Education
@@ -33,31 +32,64 @@ library(vitae)
 library(tibble)
 tribble(
   ~ Degree, ~ Year, ~ Institution, ~ Where,
-  "Informal studies", "1889-91", "Flying University", "Warsaw, Poland",
-  "Master of Physics", "1893", "Sorbonne Université", "Paris, France",
-  "Master of Mathematics", "1894", "Sorbonne Université", "Paris, France"
-) %>% 
+  "PhD in sensitive proteomics", "ongoing", "University of Copenhagen", "Copenhagen, Denmark",
+  "International Master’s Programme in Human Biology ", "2021", "University of Copenhagen", "Copenhagen, Denmark",
+  "Bachelor’s Degree in Biomedical Sciences ", "2019", "University of Barcelona", "Barcelona, Spain"
+)  |>  
   detailed_entries(Degree, Year, Institution, Where)
 ```
 
-# Nobel Prizes
+# Prizes
 
 ```{r}
 tribble(
   ~Year, ~Type, ~Desc,
-  1903, "Physics", "Awarded for her work on radioactivity with Pierre Curie and Henri Becquerel",
-  1911, "Chemistry", "Awarded for the discovery of radium and polonium"
-) %>% 
-  brief_entries(
-    glue::glue("Nobel Prize in {Type}"),
+  2022, "Poster award", "1st prize at the poster competition during Metabolism Day at CBMR",
+  2022, "Poster award", "Runner's up prize at the poster competition during Metabolism in Action symposium from the Novo Nordisk Foundation"
+)  |>  
+  vitae::brief_entries(
+    glue::glue("{Type}"),
     Year, 
     Desc
+  )
+```
+
+# Computer Skills
+
+```{r}
+tribble(
+    ~Type, ~Description, ~Level,
+    "Programming Language", "R", "Advanced",
+    "Programming Language", "Python", "Beginner",
+    "Programming Language", "Bash", "Beginner",
+    "Programming Language", "Quarto", "Intermediate",
+    "Operative system", "Windows", "Advanced",
+    "Operative system", "Linux", "Intermediate",
+    "Software", "Max Quant", "Advanced",
+    "Software", "Perseus", "Advanced",
+    "Software", "DIA-NN", "Advanced",
+    "Software", "MS-Fragger", "Advanced",
+) |>  
+  vitae::brief_entries(
+    glue::glue("{Type}"),
+    Description, 
+    Level
   )
 ```
 
 # Publications
 
 ```{r}
-
+tribble(
+  ~Year, ~Type, ~Desc,
+  2022, "1st author", "Moreno-Justicia R, Gonzalez-Franquesa A, Stocks B, Deshmukh AS. Protocol to characterize mitochondrial supercomplexes from mouse tissues by combining BN-PAGE and MS-based proteomics. STAR Protoc. 2022 Jan 28;3(1):101135. doi: 10.1016/j.xpro.2022.101135. PMID: 35128478; PMCID: PMC8808288.",
+  2021, "Co-author", "Gonzalez-Franquesa A, Stocks B, Chubanava S, Hattel HB, Moreno-Justicia R, Peijs L, Treebak JT, Zierath JR, Deshmukh AS. Mass-spectrometry-based proteomics reveals mitochondrial supercomplexome plasticity. Cell Rep. 2021 May 25;35(8):109180. doi: 10.1016/j.celrep.2021.109180. PMID: 34038727.",
+  2020, "Co-author", "Lahiguera Á, Hyroššová P, Figueras A, Garzón D, Moreno R, Soto-Cerrato V, McNeish I, Serra V, Lazaro C, Barretina P, Brunet J, Menéndez J, Matias-Guiu X, Vidal A, Villanueva A, Taylor-Harding B, Tanaka H, Orsulic S, Junza A, Yanes O, Muñoz-Pinedo C, Palomero L, Pujana MÀ, Perales JC, Viñals F. Tumors defective in homologous recombination rely on oxidative metabolism: relevance to treatments with PARP inhibitors. EMBO Mol Med. 2020 Jun 8;12(6):e11217. doi: 10.15252/emmm.201911217. Epub 2020 May 13. PMID: 32400970; PMCID: PMC7278557"
+)  |>  
+  vitae::brief_entries(
+    glue::glue("{Type}"),
+    Year, 
+    Desc
+  )
 ```
 
